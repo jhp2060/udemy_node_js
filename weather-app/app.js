@@ -6,15 +6,15 @@ if (!process.argv[2]) {
     return
 }
 
-geocode(process.argv[2], (error, data) => {
-    if (error){
+geocode(process.argv[2], (error, { latitude, longitude, location }) => {
+    if (error) {
         return console.log('Error', error)
-    } 
-    forecast(data.latitude, data.longitude, (error, forecastData) => {
+    }
+    console.log(location)
+    forecast(latitude, longitude, (error, forecastData) => {
         if (error) {
             return console.log(error)
         }
-        console.log(data.location)
         console.log(forecastData)
     })
 })
