@@ -47,6 +47,24 @@ app.get('/weather', (req, res) => {
     res.send(data)
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Jinhyeok',
+        errorMsg: 'Help article not found.'
+    })
+})
+
+// Wild Card
+// 404 Error. Should be placed in the last of the code
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Jinhyeok',
+        errorMsg: 'Page not found.'
+    })
+})
+
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
 })
