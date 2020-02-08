@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <img src='img/robot.png' alt='SIBAL'>
-    <p>created by {{name}}</p>
+    {{>header}}
+    <h1>Help</h1>
+    <p>{{msg}}</p>
+    {{>footer}}
 </body>
 </html>
